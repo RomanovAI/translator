@@ -13,25 +13,39 @@ protocol TranslatorRouterProtocol: class {
 }
 
 protocol TranslatorPresenterProtocol: class {
-    func tapLanguageButton(button: Int)
     
-    var currentButton: Int? { get }
+    var inputLanguage: Language { get }
+    var outputLanguage: Language { get }
+    var inputText: String? { get set }
+    var outputText: String? { get set }
     
-    func getTitleButton() -> [Language]
-    func setupButton()
+    func setuplanguageButton()
+    func translationText(text: String)
+    func tapArrowButton()
+    func selectionInputLanguageButton()
+    func selectionOutputLanguageButton()
+    func changeSelectedLanguage(language: Language)
 }
 
 protocol TranslatorInteractorProtocol: class {
 
     var presenter: TranslatorPresenterProtocol?  { get set }
     
-    var intputLanguage: Language? { get }
-    var outputLanguage: Language? { get }
+    var inputText: String? { get set }
+    var outputText: String? { get set }
+
+    var inputLanguage: Language { get set }
+    var outputLanguage: Language { get set }
+    
+    func translationText(text: String) 
 }
 
 protocol TranslatorViewProtocol: class {
 
     var presenter: TranslatorPresenterProtocol?  { get set }
     
-    func setupButton()
+    var outputText: String? { get set }
+    var inputText: String? { get set }
+    var inputLanguage: Language? { get set }
+    var outputLanguage: Language? { get set }
 }

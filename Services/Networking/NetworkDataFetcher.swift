@@ -12,14 +12,15 @@ class NetworkDataFetcher {
     
     let networking = NetworkService()
     
-    func fetchJSONData(urlString: String, requestModel: RequestModel, response: @escaping (ResponseModel?) -> Void) {
-        networking.request(urlString: urlString, requestModel: requestModel, completion: { (data, error) in
-            if let error = error {
-                print("ERROR==", error)
-                response(nil)
+    func fetchJSONData(urlString: String, requestModel: RequestModel, response: @escaping (Result<ResponseModel, Error>) -> Void) {
+        networking.request(urlString: urlString, requestModel: requestModel, completion: { result in
+            switch result {
+            case .failure(let error):
+                response(.failure(error))
+            case .success(let object):
+                guard let model = self.decodeJSON(type: ResponseModel.self, data: object) else { return }
+                response(.success(model))
             }
-            let decoded = self.decodeJSON(type: ResponseModel.self, data: data)
-            response(decoded)
         })
     }
     
@@ -31,8 +32,7 @@ class NetworkDataFetcher {
             print("str==", str)
             let object = try decoder.decode(ResponseModel.self, from: data)
             return object
-        } catch let jsonError {
-            print("jsonError==", jsonError)
+        } catch {
             return nil
         }
     }

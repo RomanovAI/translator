@@ -9,18 +9,22 @@
 import Foundation
 
 protocol LanguageListRouterProtocol: class {
-    func showTranslateScreen(language: Language) 
+    func dismiss(with selectedLanguage: Language)
 }
 
 protocol LanguageListPresenterProtocol: class {
-    func showTranslateScreen(language: Language?)
+    var languageList: [Language]? { get }
+    var currentLanguage: Language? { get }
+    
+    func showTranslateScreen(with selectedLanguage: Language?)
 }
 
 protocol LanguageListInteractorProtocol: class {
 
     var presenter: LanguageListPresenterProtocol?  { get set }
+    var currentLanguage: Language { get }
+    var languageList: [Language] { get }
     
-    var language: Language { get set }
 }
 
 protocol LanguageListViewProtocol: class {

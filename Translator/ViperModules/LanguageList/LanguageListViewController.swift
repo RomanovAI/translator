@@ -21,15 +21,6 @@ final class LanguageListViewController: UIViewController, LanguageListViewProtoc
         }
     }
     
-    var currentLanguage: String?
-       var onTapCell: ((String) -> Void)?
-       
-       private let languageArray: [Language] = [
-           Language(title: "English", code: "en"),
-           Language(title: "Russian", code: "ru"),
-           Language(title: "Spanish", code: "es")
-       ]
-    
     private let cellReuseIdentifier = "cell"
     
     override func viewDidLoad() {
@@ -50,32 +41,34 @@ final class LanguageListViewController: UIViewController, LanguageListViewProtoc
     }
     
     @objc func popViewController() {
-        presenter?.showTranslateScreen(language: nil)
+        presenter?.showTranslateScreen(with: nil)
     }
     
 }
 
 extension LanguageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return languageArray.count
+        guard let languageList = presenter?.languageList else { return 0 }
+        return languageList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier), let languageList = presenter?.languageList, let currentLanguage = presenter?.currentLanguage else { return UITableViewCell() }
         cell.selectionStyle = .none
-        if currentLanguage == languageArray[indexPath.row].title {
+        if currentLanguage.title == languageList[indexPath.row].title {
             cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
         } else {
             cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
         }
-        cell.textLabel?.text = languageArray[indexPath.row].title
+        cell.textLabel?.text = languageList[indexPath.row].title
         return cell
     }
 }
 
 extension LanguageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showTranslateScreen(language: languageArray[indexPath.row])
+        guard let presenter = presenter, let languageList = presenter.languageList else { return }
+        presenter.showTranslateScreen(with: languageList[indexPath.row])
     }
     
 }

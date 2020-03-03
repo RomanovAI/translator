@@ -22,12 +22,25 @@ final class LanguageListPresenter: LanguageListPresenterProtocol {
         self.router = router
     }
     
-    func showTranslateScreen(language: Language?) {
-        if let language = language {
-            router.showTranslateScreen(language: language)  
+    var languageList: [Language]? {
+        get {
+            return interactor?.languageList
+        }
+        
+    }
+    
+    var currentLanguage: Language? {
+        get {
+            return interactor?.currentLanguage
+        }
+    }
+    
+    func showTranslateScreen(with selectedLanguage: Language?) {
+        if let language = selectedLanguage {
+            router.dismiss(with: language)
         } else {
             guard let interactor = interactor else { return }
-            router.showTranslateScreen(language: interactor.language)
+            router.dismiss(with: interactor.currentLanguage)
         }
     }
     

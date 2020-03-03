@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6140DBE5240D22DE00D442F9 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBE3240D22DE00D442F9 /* HistoryTableViewCell.swift */; };
+		6140DBE6240D22DE00D442F9 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6140DBE4240D22DE00D442F9 /* HistoryTableViewCell.xib */; };
+		6140DBEC240D51FA00D442F9 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBEB240D51FA00D442F9 /* Text.swift */; };
+		6140DBF2240E281900D442F9 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBF1240E281900D442F9 /* LocalStorage.swift */; };
+		6140DBF5240E2ACE00D442F9 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBF4240E2ACE00D442F9 /* DataFetcherService.swift */; };
 		61C5805D24068D2700E5D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5805C24068D2700E5D957 /* AppDelegate.swift */; };
 		61C5805F24068D2700E5D957 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5805E24068D2700E5D957 /* SceneDelegate.swift */; };
 		61C5806724068D2700E5D957 /* Translator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61C5806524068D2700E5D957 /* Translator.xcdatamodeld */; };
 		61C5806924068D2900E5D957 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C5806824068D2900E5D957 /* Assets.xcassets */; };
 		61C5806C24068D2900E5D957 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C5806A24068D2900E5D957 /* LaunchScreen.storyboard */; };
-		61C5807724068EEC00E5D957 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5807624068EEC00E5D957 /* AppCoordinator.swift */; };
-		61C5807B2406918400E5D957 /* TranslatorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5807A2406918400E5D957 /* TranslatorCoordinator.swift */; };
-		61C5807D2406918F00E5D957 /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5807C2406918F00E5D957 /* HistoryCoordinator.swift */; };
 		61C580872406940500E5D957 /* TranslatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580812406940500E5D957 /* TranslatorPresenter.swift */; };
 		61C580882406940500E5D957 /* TranslatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580822406940500E5D957 /* TranslatorRouter.swift */; };
 		61C580892406940500E5D957 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580832406940500E5D957 /* TranslatorViewController.swift */; };
@@ -29,7 +31,7 @@
 		61C5809A2406990500E5D957 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61C580942406990500E5D957 /* HistoryViewController.xib */; };
 		61C580B12407B89400E5D957 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B02407B89400E5D957 /* NetworkService.swift */; };
 		61C580B32407BA8D00E5D957 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B22407BA8D00E5D957 /* NetworkDataFetcher.swift */; };
-		61C580B52407BCD700E5D957 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B42407BCD700E5D957 /* DataFetcherService.swift */; };
+		61C580B52407BCD700E5D957 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B42407BCD700E5D957 /* ServiceContainer.swift */; };
 		61C580B82407C08800E5D957 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B72407C08800E5D957 /* Language.swift */; };
 		61C580BA2407CF4800E5D957 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580B92407CF4800E5D957 /* RequestModel.swift */; };
 		61C580BC2407E38A00E5D957 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C580BB2407E38A00E5D957 /* ResponseModel.swift */; };
@@ -42,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6140DBE3240D22DE00D442F9 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		6140DBE4240D22DE00D442F9 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		6140DBEB240D51FA00D442F9 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		6140DBF1240E281900D442F9 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		6140DBF4240E2ACE00D442F9 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		61C5805924068D2700E5D957 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C5805C24068D2700E5D957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C5805E24068D2700E5D957 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,9 +56,6 @@
 		61C5806824068D2900E5D957 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61C5806B24068D2900E5D957 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61C5806D24068D2900E5D957 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61C5807624068EEC00E5D957 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		61C5807A2406918400E5D957 /* TranslatorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorCoordinator.swift; sourceTree = "<group>"; };
-		61C5807C2406918F00E5D957 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		61C580812406940500E5D957 /* TranslatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorPresenter.swift; sourceTree = "<group>"; };
 		61C580822406940500E5D957 /* TranslatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorRouter.swift; sourceTree = "<group>"; };
 		61C580832406940500E5D957 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		61C580942406990500E5D957 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		61C580B02407B89400E5D957 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		61C580B22407BA8D00E5D957 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
-		61C580B42407BCD700E5D957 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		61C580B42407BCD700E5D957 /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
 		61C580B72407C08800E5D957 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		61C580B92407CF4800E5D957 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		61C580BB2407E38A00E5D957 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
@@ -89,10 +93,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6140DBE2240D229F00D442F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6140DBE3240D22DE00D442F9 /* HistoryTableViewCell.swift */,
+				6140DBE4240D22DE00D442F9 /* HistoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6140DBED240E257E00D442F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61C580B92407CF4800E5D957 /* RequestModel.swift */,
+				61C580BB2407E38A00E5D957 /* ResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6140DBEE240E25AD00D442F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6140DBF0240E279E00D442F9 /* Storage */,
+				61C580AE24079DF800E5D957 /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6140DBEF240E275900D442F9 /* ServicesContainer */ = {
+			isa = PBXGroup;
+			children = (
+				61C580B42407BCD700E5D957 /* ServiceContainer.swift */,
+			);
+			path = ServicesContainer;
+			sourceTree = "<group>";
+		};
+		6140DBF0240E279E00D442F9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6140DBF1240E281900D442F9 /* LocalStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		61C5805024068D2700E5D957 = {
 			isa = PBXGroup;
 			children = (
-				61C580AE24079DF800E5D957 /* Networking */,
+				6140DBEE240E25AD00D442F9 /* Services */,
 				61C5805B24068D2700E5D957 /* Translator */,
 				61C5805A24068D2700E5D957 /* Products */,
 			);
@@ -111,8 +158,8 @@
 			children = (
 				61C5805C24068D2700E5D957 /* AppDelegate.swift */,
 				61C5805E24068D2700E5D957 /* SceneDelegate.swift */,
-				61C580B62407C07E00E5D957 /* Model */,
-				61C5807324068EBB00E5D957 /* Coordinators */,
+				6140DBEF240E275900D442F9 /* ServicesContainer */,
+				61C580B62407C07E00E5D957 /* Entity */,
 				61C58080240693E000E5D957 /* ViperModules */,
 				61C5806824068D2900E5D957 /* Assets.xcassets */,
 				61C5806A24068D2900E5D957 /* LaunchScreen.storyboard */,
@@ -120,16 +167,6 @@
 				61C5806524068D2700E5D957 /* Translator.xcdatamodeld */,
 			);
 			path = Translator;
-			sourceTree = "<group>";
-		};
-		61C5807324068EBB00E5D957 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				61C5807624068EEC00E5D957 /* AppCoordinator.swift */,
-				61C5807A2406918400E5D957 /* TranslatorCoordinator.swift */,
-				61C5807C2406918F00E5D957 /* HistoryCoordinator.swift */,
-			);
-			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		61C58080240693E000E5D957 /* ViperModules */ = {
@@ -164,6 +201,7 @@
 				61C580922406990500E5D957 /* HistoryProtocols.swift */,
 				61C580932406990500E5D957 /* HistoryInteractor.swift */,
 				61C580942406990500E5D957 /* HistoryViewController.xib */,
+				6140DBE2240D229F00D442F9 /* Cell */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -184,21 +222,21 @@
 		61C580AE24079DF800E5D957 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				6140DBED240E257E00D442F9 /* Model */,
 				61C580B02407B89400E5D957 /* NetworkService.swift */,
 				61C580B22407BA8D00E5D957 /* NetworkDataFetcher.swift */,
-				61C580B42407BCD700E5D957 /* DataFetcherService.swift */,
+				6140DBF4240E2ACE00D442F9 /* DataFetcherService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		61C580B62407C07E00E5D957 /* Model */ = {
+		61C580B62407C07E00E5D957 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				61C580B72407C08800E5D957 /* Language.swift */,
-				61C580B92407CF4800E5D957 /* RequestModel.swift */,
-				61C580BB2407E38A00E5D957 /* ResponseModel.swift */,
+				6140DBEB240D51FA00D442F9 /* Text.swift */,
 			);
-			path = Model;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +301,7 @@
 				61C5806C24068D2900E5D957 /* LaunchScreen.storyboard in Resources */,
 				61C5808C2406940500E5D957 /* TranslatorViewController.xib in Resources */,
 				61C5806924068D2900E5D957 /* Assets.xcassets in Resources */,
+				6140DBE6240D22DE00D442F9 /* HistoryTableViewCell.xib in Resources */,
 				61C5809A2406990500E5D957 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,25 +317,26 @@
 				61C580C32407FAFC00E5D957 /* LanguageListPresenter.swift in Sources */,
 				61C580B32407BA8D00E5D957 /* NetworkDataFetcher.swift in Sources */,
 				61C580C42407FAFC00E5D957 /* LanguageListRouter.swift in Sources */,
+				6140DBF2240E281900D442F9 /* LocalStorage.swift in Sources */,
+				6140DBE5240D22DE00D442F9 /* HistoryTableViewCell.swift in Sources */,
 				61C580BA2407CF4800E5D957 /* RequestModel.swift in Sources */,
 				61C580982406990500E5D957 /* HistoryProtocols.swift in Sources */,
 				61C580992406990500E5D957 /* HistoryInteractor.swift in Sources */,
 				61C580882406940500E5D957 /* TranslatorRouter.swift in Sources */,
 				61C580962406990500E5D957 /* HistoryRouter.swift in Sources */,
-				61C580B52407BCD700E5D957 /* DataFetcherService.swift in Sources */,
+				61C580B52407BCD700E5D957 /* ServiceContainer.swift in Sources */,
 				61C5808A2406940500E5D957 /* TranslatorProtocols.swift in Sources */,
 				61C580BC2407E38A00E5D957 /* ResponseModel.swift in Sources */,
 				61C580C72407FAFC00E5D957 /* LanguageListInteractor.swift in Sources */,
-				61C5807724068EEC00E5D957 /* AppCoordinator.swift in Sources */,
 				61C580892406940500E5D957 /* TranslatorViewController.swift in Sources */,
 				61C5808B2406940500E5D957 /* TranslatorInteractor.swift in Sources */,
-				61C5807D2406918F00E5D957 /* HistoryCoordinator.swift in Sources */,
 				61C580B12407B89400E5D957 /* NetworkService.swift in Sources */,
-				61C5807B2406918400E5D957 /* TranslatorCoordinator.swift in Sources */,
 				61C580952406990500E5D957 /* HistoryPresenter.swift in Sources */,
 				61C5806724068D2700E5D957 /* Translator.xcdatamodeld in Sources */,
+				6140DBF5240E2ACE00D442F9 /* DataFetcherService.swift in Sources */,
 				61C5805D24068D2700E5D957 /* AppDelegate.swift in Sources */,
 				61C580872406940500E5D957 /* TranslatorPresenter.swift in Sources */,
+				6140DBEC240D51FA00D442F9 /* Text.swift in Sources */,
 				61C580972406990500E5D957 /* HistoryViewController.swift in Sources */,
 				61C580C62407FAFC00E5D957 /* LanguageListProtocols.swift in Sources */,
 				61C580B82407C08800E5D957 /* Language.swift in Sources */,

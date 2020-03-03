@@ -14,12 +14,23 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     var interactor: HistoryInteractorProtocol?
     private let router: HistoryRouterProtocol
 
+    var translatedText: [Text] {
+        get {
+            guard let interactor = interactor else { return [] }
+            return interactor.translatedText
+        }
+    }
+    
     init(view: HistoryViewProtocol,
         interactor: HistoryInteractorProtocol?,
         router: HistoryRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
+    }
+    
+    func reloadData() {
+        view?.reloadData()
     }
 
 }

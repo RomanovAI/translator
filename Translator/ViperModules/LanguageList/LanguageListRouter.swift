@@ -12,13 +12,13 @@ final class LanguageListRouter: LanguageListRouterProtocol {
     
     weak var viewController: UIViewController?
     
-    var onShowTranslateScreen: ((_ language: Language) -> Void)?
+    var onComplete: ((Language) -> Void)? // почему опционально?
     
-    static func createModule(language: Language, onShowTranslateScreen: @escaping (_ language: Language) -> Void) -> UIViewController {
+    static func createModule(currentLanguage: Language, onComplete: ((Language) -> Void)?) -> UIViewController {
         
         let view = LanguageListViewController(nibName: nil, bundle: nil)
-        let interactor = LanguageListInteractor(language: language)
-        let router = LanguageListRouter(onShowTranslateScreen: onShowTranslateScreen)
+        let interactor = LanguageListInteractor(currentLanguage: currentLanguage)
+        let router = LanguageListRouter(onComplete: onComplete)
         let presenter = LanguageListPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -28,11 +28,11 @@ final class LanguageListRouter: LanguageListRouterProtocol {
         return view
     }
     
-    init(onShowTranslateScreen: @escaping (_ language: Language) -> Void) {
-        self.onShowTranslateScreen = onShowTranslateScreen
+    init(onComplete: ((Language) -> Void)?) {
+        self.onComplete = onComplete
     }
     
-    func showTranslateScreen(language: Language) {
-        onShowTranslateScreen?(language)
+    func dismiss(with selectedLanguage: Language) {
+        onComplete?(selectedLanguage)
     }
 }
