@@ -27,6 +27,7 @@ final class LanguageListViewController: UIViewController, LanguageListViewProtoc
         super.viewDidLoad()
         setupNavigationBar()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationBar()
@@ -36,11 +37,13 @@ final class LanguageListViewController: UIViewController, LanguageListViewProtoc
     private func setupNavigationBar() {
         title = "Source language"
         navigationController?.isNavigationBarHidden = false
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popViewController))
+        guard let cancelImage = UIImage(named: "cancel") else { return }
+        let closeButton = UIBarButtonItem(image: cancelImage, style: .plain, target: self, action: #selector(tapLeftBarButtonItem))
+        closeButton.tintColor = .black
         navigationItem.leftBarButtonItem = closeButton
     }
     
-    @objc func popViewController() {
+    @objc func tapLeftBarButtonItem() {
         presenter?.showTranslateScreen(with: nil)
     }
     

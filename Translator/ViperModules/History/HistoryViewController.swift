@@ -33,7 +33,7 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "History"
+        setupNavigationBar()
         presenter?.reloadData()
     }
     
@@ -47,9 +47,20 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
         tableView.reloadData()
     }
     
+    private func setupNavigationBar() {
+        title = "History"
+        let removeItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(tapRightBarButtonItem))
+        removeItem.tintColor = .black
+        navigationItem.rightBarButtonItem = removeItem
+    }
+    
     private func setupTabBarItem() {
         let image = UIImage(named: "history")
         tabBarItem = UITabBarItem(title: "History", image: image, tag: 1)
+    }
+    
+    @objc func tapRightBarButtonItem() {
+        presenter?.removeAll()
     }
     
 }
@@ -66,4 +77,25 @@ extension HistoryViewController: UITableViewDataSource {
         cell.setup(inputText: arrayTranslatedText[indexPath.row].inputText, outputText: arrayTranslatedText[indexPath.row].outputText)
         return cell
     }
+}
+
+extension HistoryViewController: UITableViewDelegate {
+    
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        let action = UIContextualAction(style: .destructive, title: "Delete", handler: { action, view, completion in
+//
+//            view.backgroundColor = .green
+//        })
+//        let configuration = UISwipeActionsConfiguration(actions: [action])
+//        return configuration
+//    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let arrayTranslatedText = presenter?.translatedText else { return  }
+            let translatedText = arrayTranslatedText[indexPath.row]
+            presenter?.remove(text: translatedText)
+        }
+    }
+    
 }

@@ -9,24 +9,28 @@
 import Foundation
 
 protocol HistoryRouterProtocol: class {
-
+    
 }
 
 protocol HistoryPresenterProtocol: class {
-     var translatedText: [Translate]? { get }
+    var translatedText: [Translate]? { get }
     func reloadData()
+    func removeAll()
+    func remove(text: Translate)
 }
 
 protocol HistoryInteractorProtocol: class {
-
+    
     var presenter: HistoryPresenterProtocol?  { get set }
     var translatedText: [Translate]? { get }
     
     func fetchInCoreData()
+    func removeAll()
+    func remove(text: Translate)
 }
 
 protocol HistoryViewProtocol: class {
-
+    
     var presenter: HistoryPresenterProtocol?  { get set }
     func reloadData()
 }

@@ -62,4 +62,35 @@ class CoreDataStack {
         return translatedText
     }
     
+    func removeAll() {
+        let fetchRequest: NSFetchRequest<Translate> = Translate.fetchRequest()
+        
+        do {
+            let objects = try context.fetch(fetchRequest)
+            for object in objects {
+                context.delete(object)
+            }
+            try context.save()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    func remove(text: Translate) {
+        let fetchRequest: NSFetchRequest<Translate> = Translate.fetchRequest()
+        guard let inputText = text.inputText else { return }
+        fetchRequest.predicate = NSPredicate(format: "inputText == %@", inputText)
+        
+        do {
+            let objects = try context.fetch(fetchRequest)
+            if let object = objects.first {
+                context.delete(object)
+                try context.save()
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
 }

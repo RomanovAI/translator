@@ -23,4 +23,14 @@ final class HistoryInteractor: HistoryInteractorProtocol {
     func fetchInCoreData() {
         translatedText = coreDataStack.fetchInCoreData()
     }
+    
+    func removeAll() {
+        coreDataStack.removeAll()
+        presenter?.reloadData()
+    }
+    
+    func remove(text: Translate) {
+        coreDataStack.remove(text: text)
+        presenter?.reloadData()
+    }
 }

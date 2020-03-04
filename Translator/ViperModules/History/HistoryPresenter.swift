@@ -33,5 +33,14 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         interactor?.fetchInCoreData()
         view?.reloadData()
     }
+    
+    func removeAll() {
+        interactor?.removeAll()
+        view?.reloadData()
+    }
+    
+    func remove(text: Translate) {
+        interactor?.remove(text: text)
+    }
 
 }
