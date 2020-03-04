@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
+    let coreDataStack = CoreDataStack()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
         
-        let serviceContainer = ServiceContainer()
+        let serviceContainer = ServiceContainer(coreDataStack: coreDataStack)
         
         let tabBarController = UITabBarController()
         
@@ -31,14 +32,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let historyNavigationController = UINavigationController()
         
         let translatorNavigationController = UINavigationController()
-        let translatorModule = TranslatorRouter.createModule(serviceContainer: serviceContainer, navigationController: translatorNavigationController, onComplete: { text in
-    
-        }, historyNavigationController: historyNavigationController)
+        let translatorModule = TranslatorRouter.createModule(serviceContainer: serviceContainer, navigationController: translatorNavigationController, historyNavigationController: historyNavigationController)
         translatorNavigationController.pushViewController(translatorModule, animated: true)
        
         
         
-        let historyModule = HistoryRouter.createModule(localStorage: serviceContainer.localStorage)
+        let historyModule = HistoryRouter.createModule(coreDataStack: serviceContainer.coreDataStack)
         historyNavigationController.pushViewController(historyModule, animated: true)
         
         tabBarController.viewControllers = [
@@ -81,7 +80,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
         
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        coreDataStack.saveContext()
     }
     
     

@@ -16,13 +16,11 @@ final class TranslatorRouter: TranslatorRouterProtocol {
     weak var viewController: UIViewController?
     weak var presenter: TranslatorPresenterProtocol?
     
-    var onComplete: ((Text) -> Void)? //  почему опциональный?
-    
-    static func createModule(serviceContainer: ServiceContainer, navigationController: UINavigationController, onComplete: ((Text) -> Void)?, historyNavigationController: UINavigationController) -> UIViewController {
+    static func createModule(serviceContainer: ServiceContainer, navigationController: UINavigationController, historyNavigationController: UINavigationController) -> UIViewController {
 
         let view = TranslatorViewController(nibName: nil, bundle: nil)
         let interactor = TranslatorInteractor(serviceContainer: serviceContainer)
-        let router = TranslatorRouter(navigationController: navigationController, onComplete: onComplete, historyNavigationController: historyNavigationController)
+        let router = TranslatorRouter(navigationController: navigationController, historyNavigationController: historyNavigationController)
         let presenter = TranslatorPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
@@ -33,9 +31,8 @@ final class TranslatorRouter: TranslatorRouterProtocol {
         return view
     }
     
-    init(navigationController: UINavigationController, onComplete:  ((Text)-> Void)?, historyNavigationController: UINavigationController) {
+    init(navigationController: UINavigationController,  historyNavigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.onComplete = onComplete
         self.historyNavigationController = historyNavigationController
     }
 

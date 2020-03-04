@@ -34,12 +34,12 @@ final class HistoryViewController: UIViewController, HistoryViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "History"
-        reloadData()
+        presenter?.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        reloadData()
+        presenter?.reloadData()
     }
     
     func reloadData() {

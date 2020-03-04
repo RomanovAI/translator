@@ -11,11 +11,11 @@ import Foundation
 class ServiceContainer {
     
     let dataFetcher: DataFetcherService
-    let localStorage: LocalStorage
+    var coreDataStack: CoreDataStack
     
-    init() {
+    init(coreDataStack: CoreDataStack) {
         self.dataFetcher = DataFetcherService()
-        self.localStorage = LocalStorage()
+        self.coreDataStack = coreDataStack
     }
     
 }

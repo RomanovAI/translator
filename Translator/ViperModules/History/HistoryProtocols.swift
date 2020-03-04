@@ -13,15 +13,16 @@ protocol HistoryRouterProtocol: class {
 }
 
 protocol HistoryPresenterProtocol: class {
-     var translatedText: [Text] { get }
+     var translatedText: [Translate]? { get }
     func reloadData()
 }
 
 protocol HistoryInteractorProtocol: class {
 
     var presenter: HistoryPresenterProtocol?  { get set }
+    var translatedText: [Translate]? { get }
     
-    var translatedText: [Text] { get }
+    func fetchInCoreData()
 }
 
 protocol HistoryViewProtocol: class {

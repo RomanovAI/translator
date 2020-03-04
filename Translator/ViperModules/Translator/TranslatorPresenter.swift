@@ -71,6 +71,7 @@ final class TranslatorPresenter: TranslatorPresenterProtocol {
     
     func translationText(text: String) {
         guard let interactor = interactor, let encodeString = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        interactor.inputText = text
         interactor.translationText(text: encodeString)
     }
     

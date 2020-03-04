@@ -15,19 +15,6 @@ class NetworkService {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
-        let headers = [
-            "User-Agent": "PostmanRuntime/7.15.2",
-            "Accept": "*/*",
-            "Cache-Control": "no-cache",
-            "Postman-Token": "516de88c-3131-4993-847f-0e79c8749541,bb8e125f-0c52-4833-8c46-679c65cb5d09",
-            "Host": "translate.yandex.net",
-            "Accept-Encoding": "gzip, deflate",
-            "Content-Length": "",
-            "Connection": "keep-alive",
-            "cache-control": "no-cache"
-        ]
-        request.allHTTPHeaderFields = headers
         let task = createDataTask(request: request, completion: completion)
         task.resume()
     }

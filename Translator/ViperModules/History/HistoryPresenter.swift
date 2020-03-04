@@ -14,7 +14,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     var interactor: HistoryInteractorProtocol?
     private let router: HistoryRouterProtocol
 
-    var translatedText: [Text] {
+    var translatedText: [Translate]? {
         get {
             guard let interactor = interactor else { return [] }
             return interactor.translatedText
@@ -30,6 +30,7 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     }
     
     func reloadData() {
+        interactor?.fetchInCoreData()
         view?.reloadData()
     }
 

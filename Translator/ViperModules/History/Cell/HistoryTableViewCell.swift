@@ -14,7 +14,8 @@ class HistoryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var outputLabel: UILabel!
     
-    func setup(inputText: String, outputText: String) {
+    func setup(inputText: String?, outputText: String?) {
+        guard let inputText = inputText, let outputText = outputText else { return }
         inputLabel.text = inputText
         outputLabel.text = outputText
     }

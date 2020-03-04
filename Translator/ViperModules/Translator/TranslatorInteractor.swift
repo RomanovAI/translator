@@ -31,17 +31,17 @@ final class TranslatorInteractor: TranslatorInteractorProtocol {
         serviceContainer.dataFetcher.translateText(text: text, lang: lang) { [weak self] response in
             guard let self = self else { return }
             switch response {
-            case .failure(_):
-                self.presenter?.outputText = ""
             case .success(let model):
-                let outputText = model.text.joined(separator: " ")
-                self.presenter?.outputText = outputText
-                guard let decodeURl = text.removingPercentEncoding else { return }
-                let text = Text(inputText: decodeURl, outputText: outputText)
-                self.serviceContainer.localStorage.addText(text: text)
-
+                self.presenter?.outputText = model.text.joined(separator: " ")
+                self.saveInCoreData(inputText: self.inputText, outputText: self.outputText)
+            case .failure(_):
+                 self.presenter?.outputText = ""
             }
         }
+    }
+    
+    private func saveInCoreData(inputText: String?, outputText: String?) {
+        serviceContainer.coreDataStack.saveInCoreData(inputText: inputText, outputText: outputText)
     }
     
 }

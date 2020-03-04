@@ -7,21 +7,20 @@
 //
 
 import Foundation
+import CoreData
 
 final class HistoryInteractor: HistoryInteractorProtocol {
-
+    
     weak var presenter: HistoryPresenterProtocol?
-    let localStorage: LocalStorage
+    let coreDataStack: CoreDataStack
     
+    var translatedText: [Translate]?
     
-    var translatedText: [Text] {
-        return localStorage.translatedText
+    init(coreDataStack: CoreDataStack) {
+        self.coreDataStack = coreDataStack
     }
     
-    init(localStorage: LocalStorage) {
-        self.localStorage = localStorage
-        localStorage.updateHandlers.append({
-            self.presenter?.reloadData()
-        })
+    func fetchInCoreData() {
+        translatedText = coreDataStack.fetchInCoreData()
     }
 }
