@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="Translator" customModuleProvider="target">
             <connections>
+                <outlet property="label" destination="H5e-k1-cie" id="11g-wz-1Bz"/>
+                <outlet property="searchBar" destination="PO1-Ps-ebi" id="3Tf-6N-jth"/>
                 <outlet property="tableView" destination="UVZ-HF-zGj" id="StZ-8W-Zix"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,15 +25,22 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UVZ-HF-zGj">
-                    <rect key="frame" x="0.0" y="100" width="394" height="808"/>
+                    <rect key="frame" x="0.0" y="100" width="414" height="808"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ничего не найдено" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-k1-cie">
+                    <rect key="frame" x="129" y="437" width="155" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="UVZ-HF-zGj" firstAttribute="bottom" secondItem="zeQ-eg-Oeh" secondAttribute="bottom" constant="46" id="0ZC-cc-wiJ"/>
                 <constraint firstItem="UVZ-HF-zGj" firstAttribute="leading" secondItem="zeQ-eg-Oeh" secondAttribute="leading" id="5Yr-NI-Sew"/>
-                <constraint firstItem="zeQ-eg-Oeh" firstAttribute="trailing" secondItem="UVZ-HF-zGj" secondAttribute="trailing" constant="20" id="7ub-9f-Tuv"/>
+                <constraint firstItem="zeQ-eg-Oeh" firstAttribute="trailing" secondItem="UVZ-HF-zGj" secondAttribute="trailing" id="7ub-9f-Tuv"/>
                 <constraint firstItem="PO1-Ps-ebi" firstAttribute="leading" secondItem="zeQ-eg-Oeh" secondAttribute="leading" id="MvW-9l-2Q6"/>
                 <constraint firstItem="UVZ-HF-zGj" firstAttribute="top" secondItem="PO1-Ps-ebi" secondAttribute="bottom" id="OdC-UW-eIX"/>
                 <constraint firstItem="zeQ-eg-Oeh" firstAttribute="trailing" secondItem="PO1-Ps-ebi" secondAttribute="trailing" id="dD8-DO-c1a"/>

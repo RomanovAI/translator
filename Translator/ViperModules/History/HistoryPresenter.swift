@@ -14,10 +14,9 @@ final class HistoryPresenter: HistoryPresenterProtocol {
     var interactor: HistoryInteractorProtocol?
     private let router: HistoryRouterProtocol
 
-    var translatedText: [Translate]? {
+    var arrayTranslatedText: [Translate]? {
         get {
-            guard let interactor = interactor else { return [] }
-            return interactor.translatedText
+            return interactor?.arrayTranslatedText
         }
     }
     
@@ -29,18 +28,33 @@ final class HistoryPresenter: HistoryPresenterProtocol {
         self.router = router
     }
     
-    func reloadData() {
-        interactor?.fetchInCoreData()
-        view?.reloadData()
+    func fetchData() {
+        interactor?.fetchData()
+        view?.showLabel(isHidden: true)
+        reloadData()
     }
     
     func removeAll() {
         interactor?.removeAll()
+        fetchData()
+    }
+    
+    private func reloadData() {
         view?.reloadData()
     }
     
     func remove(text: Translate) {
         interactor?.remove(text: text)
+        fetchData()
+    }
+    
+    func search(text: String) {
+        interactor?.search(text: text)
+        reloadData()
+    }
+    
+    func showFoundResults(isFound: Bool) {
+        view?.showLabel(isHidden: isFound)
     }
 
 }

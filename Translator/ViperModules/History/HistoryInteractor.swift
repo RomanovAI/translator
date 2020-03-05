@@ -14,23 +14,30 @@ final class HistoryInteractor: HistoryInteractorProtocol {
     weak var presenter: HistoryPresenterProtocol?
     let coreDataStack: CoreDataStack
     
-    var translatedText: [Translate]?
+    var arrayTranslatedText: [Translate]?
     
     init(coreDataStack: CoreDataStack) {
         self.coreDataStack = coreDataStack
     }
     
-    func fetchInCoreData() {
-        translatedText = coreDataStack.fetchInCoreData()
+    func fetchData() {
+        arrayTranslatedText = coreDataStack.fetchData()
     }
     
     func removeAll() {
         coreDataStack.removeAll()
-        presenter?.reloadData()
     }
     
     func remove(text: Translate) {
         coreDataStack.remove(text: text)
-        presenter?.reloadData()
+    }
+    
+    func search(text: String) {
+       arrayTranslatedText = coreDataStack.search(text: text)
+        if arrayTranslatedText?.count == 0 {
+            presenter?.showFoundResults(isFound: false)
+        } else {
+             presenter?.showFoundResults(isFound: true)
+        }
     }
 }

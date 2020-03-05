@@ -49,7 +49,7 @@ class CoreDataStack {
         }
     }
     
-    func fetchInCoreData() -> [Translate] {
+    func fetchData() -> [Translate] {
         let fetchRequest: NSFetchRequest<Translate> = Translate.fetchRequest()
         var translatedText: [Translate] = []
         
@@ -91,6 +91,27 @@ class CoreDataStack {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+    }
+    
+    func search(text: String) -> [Translate] {
+        print("text=", text)
+        let fetchRequest: NSFetchRequest<Translate> = Translate.fetchRequest()
+        let inputPredicate = NSPredicate(format: "inputText contains[c] %@", text)
+        let outputPredicate = NSPredicate(format: "outputText contains[c] %@", text)
+        fetchRequest.predicate = NSCompoundPredicate(type: .or, subpredicates: [inputPredicate, outputPredicate])
+        
+        var foundObjects: [Translate] = []
+        
+        do {
+            foundObjects = try context.fetch(fetchRequest)
+            print("foundObjects.count-", foundObjects.count)
+            
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        print("foundObjects==", foundObjects)
+        return foundObjects
     }
     
 }

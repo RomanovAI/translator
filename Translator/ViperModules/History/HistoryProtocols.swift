@@ -13,24 +13,29 @@ protocol HistoryRouterProtocol: class {
 }
 
 protocol HistoryPresenterProtocol: class {
-    var translatedText: [Translate]? { get }
-    func reloadData()
+    var arrayTranslatedText: [Translate]? { get }
+    func fetchData()
     func removeAll()
     func remove(text: Translate)
+    func search(text: String)
+    
+    func showFoundResults(isFound: Bool)
 }
 
 protocol HistoryInteractorProtocol: class {
     
     var presenter: HistoryPresenterProtocol?  { get set }
-    var translatedText: [Translate]? { get }
+    var arrayTranslatedText: [Translate]? { get }
     
-    func fetchInCoreData()
+    func fetchData()
     func removeAll()
     func remove(text: Translate)
+    func search(text: String)
 }
 
 protocol HistoryViewProtocol: class {
     
     var presenter: HistoryPresenterProtocol?  { get set }
+    func showLabel(isHidden: Bool)
     func reloadData()
 }
