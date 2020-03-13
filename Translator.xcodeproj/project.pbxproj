@@ -11,6 +11,7 @@
 		6140DBE6240D22DE00D442F9 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6140DBE4240D22DE00D442F9 /* HistoryTableViewCell.xib */; };
 		6140DBF2240E281900D442F9 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBF1240E281900D442F9 /* CoreDataStack.swift */; };
 		6140DBF5240E2ACE00D442F9 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140DBF4240E2ACE00D442F9 /* DataFetcherService.swift */; };
+		614E20B7241BB4E8002D69F8 /* todo in Resources */ = {isa = PBXBuildFile; fileRef = 614E20B6241BB4E8002D69F8 /* todo */; };
 		6151863C240FA4A400D89E0D /* Translate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151863A240FA4A400D89E0D /* Translate+CoreDataClass.swift */; };
 		6151863D240FA4A400D89E0D /* Translate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6151863B240FA4A400D89E0D /* Translate+CoreDataProperties.swift */; };
 		61C5805D24068D2700E5D957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C5805C24068D2700E5D957 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		6140DBE4240D22DE00D442F9 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		6140DBF1240E281900D442F9 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6140DBF4240E2ACE00D442F9 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		614E20B6241BB4E8002D69F8 /* todo */ = {isa = PBXFileReference; lastKnownFileType = text; path = todo; sourceTree = "<group>"; };
 		6151863A240FA4A400D89E0D /* Translate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translate+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6151863B240FA4A400D89E0D /* Translate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Translate+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61C5805924068D2700E5D957 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 				61C5806824068D2900E5D957 /* Assets.xcassets */,
 				61C5806A24068D2900E5D957 /* LaunchScreen.storyboard */,
 				61C5806D24068D2900E5D957 /* Info.plist */,
+				614E20B6241BB4E8002D69F8 /* todo */,
 				61C5806524068D2700E5D957 /* Translator.xcdatamodeld */,
 			);
 			path = Translator;
@@ -308,6 +311,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				614E20B7241BB4E8002D69F8 /* todo in Resources */,
 				61C580C82407FAFC00E5D957 /* LanguageListViewController.xib in Resources */,
 				61C5806C24068D2900E5D957 /* LaunchScreen.storyboard in Resources */,
 				61C5808C2406940500E5D957 /* TranslatorViewController.xib in Resources */,

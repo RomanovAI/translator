@@ -1,0 +1,24 @@
+
+Архитектурные паттерны
+https://habr.com/ru/company/badoo/blog/281162/
+ 
+API гайдлайны
+https://swift.org/documentation/api-design-guidelines/
+ 
+Навигация в приложениях - Изучить способы представления, транзишны(в том числе анимированные) между контроллерами,
+ 
+Networking
+URLSession, URLRequest, Result, Codable
+ 
+GCD
+https://habr.com/ru/post/320152/
+ 
+CoreData
+-
+ 
+DI - что такое, какие есть способы его реализовать
+https://habr.com/ru/company/redmadrobot/blog/352088/
+ 
+Принципы SOLID, DRY
+ 
+человеческий Autolayout
